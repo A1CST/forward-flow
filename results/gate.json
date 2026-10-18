@@ -1,0 +1,46 @@
+{
+ "heldout_chars": 25,
+ "frames": 1461,
+ "excluded_near_reference": 139,
+ "model": {
+  "alpha_soft_iou": 0.9758,
+  "alpha_iou_p5": 0.9452,
+  "rgb_err_in_mask_0_255": 4.69,
+  "region_rgb_err_0_255": {
+   "skin": 6.15,
+   "hair": 5.01,
+   "shirt": 3.78,
+   "pants": 3.11,
+   "dark": 15.42
+  }
+ },
+ "ref_paste": {
+  "alpha_soft_iou": 0.4228,
+  "alpha_iou_p5": 0.3196,
+  "rgb_err_in_mask_0_255": 56.7
+ },
+ "token_swap": {
+  "alpha_soft_iou": 0.9758,
+  "alpha_iou_p5": 0.9455,
+  "rgb_err_in_mask_0_255": 47.43,
+  "region_rgb_err_0_255": {
+   "skin": 32.33,
+   "hair": 52.84,
+   "shirt": 61.48,
+   "pants": 63.17,
+   "dark": 15.95
+  }
+ },
+ "region_note": "Astra 1560858035956490301: per-region colour error (renderer part labels, gate only) so one wrong region cannot hide in the mean",
+ "bars": {
+  "G1_iou_min": 0.8972,
+  "G2_rgb_max": 12.11,
+  "source": "calibrate-shift of the human_v3 pack (same as crender_h3)"
+ },
+ "pass": {
+  "G1_iou": true,
+  "G2_rgb": true,
+  "G3_identity": true
+ },
+ "all_gates_pass": true
+}

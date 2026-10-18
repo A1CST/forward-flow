@@ -1,0 +1,4 @@
+torch>=2.0
+numpy
+pillow
+opencv-python  # optional: live window in toy_demo.py

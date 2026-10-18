@@ -1,0 +1,30 @@
+{
+ "bars": {
+  "truth_ankle_drift_px_max": 1.0,
+  "model_foot_drift_px_p95": 2.0
+ },
+ "characters": {
+  "h0115": {
+   "wave_frames": 65,
+   "truth_ankle_drift_px_max": 0.0,
+   "model_foot_drift_px_p95": 0.086,
+   "model_foot_drift_px_max": 0.086,
+   "pass": true
+  },
+  "h0116": {
+   "wave_frames": 65,
+   "truth_ankle_drift_px_max": 0.0,
+   "model_foot_drift_px_p95": 0.047,
+   "model_foot_drift_px_max": 0.047,
+   "pass": true
+  },
+  "h0117": {
+   "wave_frames": 65,
+   "truth_ankle_drift_px_max": 0.0,
+   "model_foot_drift_px_p95": 0.086,
+   "model_foot_drift_px_max": 0.125,
+   "pass": true
+  }
+ },
+ "all_pass": true
+}
