@@ -8,7 +8,7 @@ contain motion derived from it:
 - `media/*_truth_vs_network.mp4` (the wave sections)
 
 These files are NOT covered by the CC BY 4.0 notice in LICENSE. CMU's terms apply to the motion: free to use, including
-in commercial products, but the motion data may not be resold directly as raw data.
+in commercial products, but the motion data may not be resold directly, even in converted form (the joint files here are a converted form).
 
 Acknowledgement requested by CMU: "The data used in this project was obtained from mocap.cs.cmu.edu. The database was
 created with funding from NSF EIA-0196217."

@@ -7,11 +7,12 @@ character, plus 13 2-D joints per frame. It never sees the target frames.
 
 The characters in the demos below were **held out**: the network never trained on them.
 
-| Held-out character | Video (left: Blender truth, right: network from ONE reference image) |
-|---|---|
-| h0115 | [media/h0115_truth_vs_network.mp4](media/h0115_truth_vs_network.mp4) |
-| h0116 | [media/h0116_truth_vs_network.mp4](media/h0116_truth_vs_network.mp4) |
-| h0117 | [media/h0117_truth_vs_network.mp4](media/h0117_truth_vs_network.mp4) |
+| h0115 | h0116 | h0117 |
+|---|---|---|
+| ![h0115](media/gif/h0115.gif) | ![h0116](media/gif/h0116.gif) | ![h0117](media/gif/h0117.gif) |
+
+Left half of each clip: Blender truth. Right half: the network, from ONE reference image. Full-quality MP4s are in
+[media/](media/).
 
 Each video runs a 20 s script: walk, run, turn around, walk back, jump, turn to the camera, wave, turn, run, jump.
 
@@ -26,7 +27,9 @@ python toy_demo.py --seed 7 --seconds 30         # reproducible; every run saves
 python toy_demo.py --replay out/toy_seed7.script.json --save out/replay.mp4 --no_window
 ```
 
-`toy_demo.py` draws a random, bounded script from the supported actions (Walk, Run, Jump, Idle, Wave, turns).
+![toy demo](media/gif/toy_demo_seed7.gif)
+
+`toy_demo.py` (above: seed 7, first 12 s, network rendering only) draws a random, bounded script from the supported actions (Walk, Run, Jump, Idle, Wave, turns).
 - It stitches recorded joint segments from `examples/action_library.json`, cross-fading 6 frames at every cut.
 - The network renders every frame live; this is network rendering only, with no Blender truth.
 - The same seed replays the same script deterministically. Rendered pixels can differ slightly across hardware and
