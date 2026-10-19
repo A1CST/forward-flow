@@ -1,0 +1,50 @@
+{
+ "model": "character/runs/crender_h5ma",
+ "reference": "character/packs/gen60_truth_v2_ol/tux/ref.png",
+ "ref2": "",
+ "swap_at": null,
+ "blend": null,
+ "refs": "",
+ "swap_frames": "",
+ "frames": 1440,
+ "device": "cuda",
+ "ms_per_frame_batched": 0.949,
+ "ms_per_frame_single": 2.895,
+ "batch": 32,
+ "overall": {
+  "alpha_soft_iou": 0.9356,
+  "rgb_err_in_mask_0_255": 20.34
+ },
+ "bands": {
+  "front_270": {
+   "frames": 469,
+   "alpha_soft_iou": 0.8922,
+   "rgb_err_in_mask_0_255": 27.23
+  },
+  "interp_225": {
+   "frames": 78,
+   "alpha_soft_iou": 0.9258,
+   "rgb_err_in_mask_0_255": 24.01
+  },
+  "interp_45": {
+   "frames": 27,
+   "alpha_soft_iou": 0.9493,
+   "rgb_err_in_mask_0_255": 16.7
+  },
+  "other": {
+   "frames": 340,
+   "alpha_soft_iou": 0.9536,
+   "rgb_err_in_mask_0_255": 19.2
+  },
+  "rear_90": {
+   "frames": 84,
+   "alpha_soft_iou": 0.9662,
+   "rgb_err_in_mask_0_255": 16.1
+  },
+  "side": {
+   "frames": 442,
+   "alpha_soft_iou": 0.9628,
+   "rgb_err_in_mask_0_255": 14.28
+  }
+ }
+}

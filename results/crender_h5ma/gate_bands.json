@@ -1,0 +1,118 @@
+{
+ "model": "character/runs/crender_h5ma",
+ "pack": "character/packs/human_v5_multiangle",
+ "bands_deg": {
+  "side": [
+   [
+    -25,
+    25
+   ],
+   [
+    155,
+    205
+   ]
+  ],
+  "interp_45": [
+   [
+    35,
+    55
+   ]
+  ],
+  "interp_225": [
+   [
+    215,
+    235
+   ]
+  ],
+  "rear_90": [
+   [
+    65,
+    115
+   ]
+  ],
+  "front_270": [
+   [
+    245,
+    295
+   ]
+  ]
+ },
+ "splits": {
+  "evalangle": {
+   "front_270": {
+    "frames": 1661,
+    "alpha_soft_iou": 0.8876,
+    "rgb_err_in_mask_0_255": 23.06,
+    "token_swap_rgb_err": 53.42
+   },
+   "interp_225": {
+    "frames": 1365,
+    "alpha_soft_iou": 0.9277,
+    "rgb_err_in_mask_0_255": 17.45,
+    "token_swap_rgb_err": 49.55
+   },
+   "interp_45": {
+    "frames": 1260,
+    "alpha_soft_iou": 0.9487,
+    "rgb_err_in_mask_0_255": 13.59,
+    "token_swap_rgb_err": 47.39
+   },
+   "other": {
+    "frames": 477,
+    "alpha_soft_iou": 0.9488,
+    "rgb_err_in_mask_0_255": 13.37,
+    "token_swap_rgb_err": 47.15
+   },
+   "rear_90": {
+    "frames": 1260,
+    "alpha_soft_iou": 0.9651,
+    "rgb_err_in_mask_0_255": 11.26,
+    "token_swap_rgb_err": 44.76
+   },
+   "side": {
+    "frames": 707,
+    "alpha_soft_iou": 0.9587,
+    "rgb_err_in_mask_0_255": 9.85,
+    "token_swap_rgb_err": 45.69
+   }
+  },
+  "heldout": {
+   "front_270": {
+    "frames": 394,
+    "alpha_soft_iou": 0.8875,
+    "rgb_err_in_mask_0_255": 23.0,
+    "token_swap_rgb_err": 54.35
+   },
+   "interp_225": {
+    "frames": 325,
+    "alpha_soft_iou": 0.9281,
+    "rgb_err_in_mask_0_255": 17.38,
+    "token_swap_rgb_err": 50.7
+   },
+   "interp_45": {
+    "frames": 300,
+    "alpha_soft_iou": 0.9489,
+    "rgb_err_in_mask_0_255": 13.68,
+    "token_swap_rgb_err": 48.35
+   },
+   "other": {
+    "frames": 1057,
+    "alpha_soft_iou": 0.9651,
+    "rgb_err_in_mask_0_255": 10.57,
+    "token_swap_rgb_err": 46.64
+   },
+   "rear_90": {
+    "frames": 809,
+    "alpha_soft_iou": 0.9665,
+    "rgb_err_in_mask_0_255": 11.9,
+    "token_swap_rgb_err": 45.47
+   },
+   "side": {
+    "frames": 1306,
+    "alpha_soft_iou": 0.9645,
+    "rgb_err_in_mask_0_255": 8.95,
+    "token_swap_rgb_err": 46.59
+   }
+  }
+ }
+}

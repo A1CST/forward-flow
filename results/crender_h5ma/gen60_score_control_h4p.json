@@ -1,0 +1,50 @@
+{
+ "model": "character/runs/crender_h4p",
+ "reference": "character/packs/gen60_truth_v2_ol/tux/ref.png",
+ "ref2": "",
+ "swap_at": null,
+ "blend": null,
+ "refs": "",
+ "swap_frames": "",
+ "frames": 1440,
+ "device": "cuda",
+ "ms_per_frame_batched": 0.95,
+ "ms_per_frame_single": 2.892,
+ "batch": 32,
+ "overall": {
+  "alpha_soft_iou": 0.9031,
+  "rgb_err_in_mask_0_255": 23.54
+ },
+ "bands": {
+  "front_270": {
+   "frames": 469,
+   "alpha_soft_iou": 0.8522,
+   "rgb_err_in_mask_0_255": 30.56
+  },
+  "interp_225": {
+   "frames": 78,
+   "alpha_soft_iou": 0.8784,
+   "rgb_err_in_mask_0_255": 30.39
+  },
+  "interp_45": {
+   "frames": 27,
+   "alpha_soft_iou": 0.9322,
+   "rgb_err_in_mask_0_255": 18.16
+  },
+  "other": {
+   "frames": 340,
+   "alpha_soft_iou": 0.899,
+   "rgb_err_in_mask_0_255": 24.69
+  },
+  "rear_90": {
+   "frames": 84,
+   "alpha_soft_iou": 0.9299,
+   "rgb_err_in_mask_0_255": 17.78
+  },
+  "side": {
+   "frames": 442,
+   "alpha_soft_iou": 0.9578,
+   "rgb_err_in_mask_0_255": 15.41
+  }
+ }
+}

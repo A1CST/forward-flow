@@ -1,0 +1,37 @@
+{
+ "heldout_chars": 25,
+ "frames": 4191,
+ "excluded_near_reference": 259,
+ "model": {
+  "alpha_soft_iou": 0.9538,
+  "alpha_iou_p5": 0.8912,
+  "rgb_err_in_mask_0_255": 12.24,
+  "region_rgb_err_0_255": {
+   "skin": 10.52,
+   "hair": 5.99,
+   "shirt": 24.05,
+   "pants": 5.29,
+   "dark": 29.42,
+   "shirt_ink": 28.62
+  }
+ },
+ "ref_paste": {
+  "alpha_soft_iou": 0.4571,
+  "alpha_iou_p5": 0.3815,
+  "rgb_err_in_mask_0_255": 63.34
+ },
+ "token_swap": {
+  "alpha_soft_iou": 0.9538,
+  "alpha_iou_p5": 0.8917,
+  "rgb_err_in_mask_0_255": 47.56,
+  "region_rgb_err_0_255": {
+   "skin": 49.55,
+   "hair": 50.84,
+   "shirt": 41.56,
+   "pants": 61.21,
+   "dark": 31.05,
+   "shirt_ink": 45.73
+  }
+ },
+ "region_note": "Astra 1560858035956490301: per-region colour error (renderer part labels, gate only) so one wrong region cannot hide in the mean"
+}
