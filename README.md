@@ -2,7 +2,7 @@
 
 # Forward Flow: one-reference cartoon character renderer
 
-A small network (6.3 M parameters) that draws a cartoon character in any pose from **one reference image** of that
+A small network (6,299,300 parameters in the RGB/RGBA checkpoints; 6,299,447 in the latest coordinate-output checkpoint) that draws a cartoon character in any pose from **one reference image** of that
 character, plus 13 2-D joints per frame. It never sees the target frames.
 
 The characters in the demos below were **held out**: the network never trained on them.
@@ -29,7 +29,7 @@ camera starts side-on, swings to face him, zooms in on his face and back out, th
 rear quarter and the rear. The joints and the view angle come from the Blender rig each frame (`examples/gen60_tux/`).
 The street is a separate procedural scene renderer (perspective, 29 seeded buildings), not a learned model.
 
-**The model.** Same architecture and recipe as `crender_h3y` (6.3 M parameters). The only change is the training data: a
+**The model.** Same architecture and recipe as `crender_h3y` (exactly 6,299,300 parameters). The only change is the training data: a
 multi-angle pack of 140 characters x 712 frames with continuous random view angles, mid-clip turns, and three view-angle
 bands held out of training (45 +- 10, 225 +- 10 and the front, 270 +- 25 deg). Weights: `weights/crender_h5ma/` (plateau stop at
 step 18,000). The view-angle input is the facing yaw: 0 = profile facing right, 90 = back, 180 = profile left,
@@ -71,7 +71,7 @@ Caveats for this result:
 
 ## New: `crender_h5mac_all` weights with body-surface coordinates
 
-`weights/crender_h5mac_all/` contains the latest fully trained cartoon-character renderer (6.30 M parameters). It
+`weights/crender_h5mac_all/` contains the latest fully trained cartoon-character renderer (exactly 6,299,447 parameters). It
 draws the same premultiplied RGBA image as the released character models and additionally predicts a three-channel
 body-surface coordinate field, exposed after inference as `model.last_coords`. This supports parented visual objects,
 such as shirt patterns, without changing the RGB/RGBA call site.
