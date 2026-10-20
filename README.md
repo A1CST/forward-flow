@@ -69,6 +69,19 @@ Caveats for this result:
 - One training seed; the multi-angle pack builder is in `reproduce/multiangle/`, the street / compositor / demo in
   `reproduce/gen60/`.
 
+## New: `crender_h5mac_all` weights with body-surface coordinates
+
+`weights/crender_h5mac_all/` contains the latest fully trained cartoon-character renderer (6.30 M parameters). It
+draws the same premultiplied RGBA image as the released character models and additionally predicts a three-channel
+body-surface coordinate field, exposed after inference as `model.last_coords`. This supports parented visual objects,
+such as shirt patterns, without changing the RGB/RGBA call site.
+
+It was trained on all view angles for the 105 training characters, then evaluated on held-out characters. The gate is
+stored beside the weights in `gate_ab_verdict.json`: the RGB error met the frozen non-regression bar in every view band;
+body-coordinate L1 is also reported per band. Because all angles were included in training for this model, those bands
+are not an unseen-angle generalization claim. The earlier `crender_h5ma` weights remain the released angle-held-out
+model and should be used for that comparison.
+
 ## Scope of this release (read this first)
 
 `crender_h3y` is ONE deliberately stateless rendering lane, not the complete Forward Flow system.

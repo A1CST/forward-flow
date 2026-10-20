@@ -1,0 +1,86 @@
+{
+ "model": "character/runs/crender_h5mac_all",
+ "pack": "character/packs/human_v5_multiangle",
+ "bands_deg": {
+  "side": [
+   [
+    -25,
+    25
+   ],
+   [
+    155,
+    205
+   ]
+  ],
+  "interp_45": [
+   [
+    35,
+    55
+   ]
+  ],
+  "interp_225": [
+   [
+    215,
+    235
+   ]
+  ],
+  "rear_90": [
+   [
+    65,
+    115
+   ]
+  ],
+  "front_270": [
+   [
+    245,
+    295
+   ]
+  ]
+ },
+ "splits": {
+  "heldout": {
+   "front_270": {
+    "frames": 394,
+    "alpha_soft_iou": 0.9728,
+    "rgb_err_in_mask_0_255": 11.14,
+    "token_swap_rgb_err": 45.81,
+    "coord_l1": 0.0086
+   },
+   "interp_225": {
+    "frames": 325,
+    "alpha_soft_iou": 0.9764,
+    "rgb_err_in_mask_0_255": 10.12,
+    "token_swap_rgb_err": 45.86,
+    "coord_l1": 0.008
+   },
+   "interp_45": {
+    "frames": 300,
+    "alpha_soft_iou": 0.9772,
+    "rgb_err_in_mask_0_255": 9.92,
+    "token_swap_rgb_err": 45.87,
+    "coord_l1": 0.0072
+   },
+   "other": {
+    "frames": 1057,
+    "alpha_soft_iou": 0.9645,
+    "rgb_err_in_mask_0_255": 10.62,
+    "token_swap_rgb_err": 46.5,
+    "coord_l1": 0.0105
+   },
+   "rear_90": {
+    "frames": 809,
+    "alpha_soft_iou": 0.9691,
+    "rgb_err_in_mask_0_255": 11.76,
+    "token_swap_rgb_err": 45.46,
+    "coord_l1": 0.0086
+   },
+   "side": {
+    "frames": 1306,
+    "alpha_soft_iou": 0.9622,
+    "rgb_err_in_mask_0_255": 9.32,
+    "token_swap_rgb_err": 46.64,
+    "coord_l1": 0.011
+   }
+  }
+ }
+}

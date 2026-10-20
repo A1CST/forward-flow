@@ -1,0 +1,51 @@
+{
+ "rule": "gate (a): held-out characters, rgb <= step 2 + 0.5 in every band; (b) coord L1 reported",
+ "gate_a_pass": true,
+ "rows": [
+  {
+   "band": "front_270",
+   "rgb_all": 11.14,
+   "rgb_step2": 22.31,
+   "delta": -11.17,
+   "within_0_5": true,
+   "coord_all": 0.0086,
+   "coord_step2": 0.0558
+  },
+  {
+   "band": "interp_225",
+   "rgb_all": 10.12,
+   "rgb_step2": 17.05,
+   "delta": -6.93,
+   "within_0_5": true,
+   "coord_all": 0.008,
+   "coord_step2": 0.0329
+  },
+  {
+   "band": "interp_45",
+   "rgb_all": 9.92,
+   "rgb_step2": 13.35,
+   "delta": -3.43,
+   "within_0_5": true,
+   "coord_all": 0.0072,
+   "coord_step2": 0.0196
+  },
+  {
+   "band": "rear_90",
+   "rgb_all": 11.76,
+   "rgb_step2": 11.73,
+   "delta": 0.03,
+   "within_0_5": true,
+   "coord_all": 0.0086,
+   "coord_step2": 0.0091
+  },
+  {
+   "band": "side",
+   "rgb_all": 9.32,
+   "rgb_step2": 8.98,
+   "delta": 0.34,
+   "within_0_5": true,
+   "coord_all": 0.011,
+   "coord_step2": 0.0105
+  }
+ ]
+}

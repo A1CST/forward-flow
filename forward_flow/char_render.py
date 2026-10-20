@@ -94,15 +94,16 @@ class Block(nn.Module):
 
 
 class CharRender(nn.Module):
-    def __init__(s, d=256, c=(64, 128, 192, 256), v2=False, yaw_in=False):
+    def __init__(s, d=256, c=(64, 128, 192, 256), v2=False, yaw_in=False, coords=False):
         super().__init__(); s.tok = TokenNet(d); s.v2 = v2
+        s.coords = coords
         if v2:
             s.tok.v2 = True; s.tok.pal = nn.Sequential(nn.Linear(len(REGIONS) * 4, 256), nn.SiLU(), nn.Linear(256, d))
         s.yaw_in = yaw_in                                            # v3: declared facing yaw (sin, cos) as 2 input planes
         s.e = nn.ModuleList([Block(37 + (2 if yaw_in else 0), c[0], d), Block(c[0], c[1], d), Block(c[1], c[2], d), Block(c[2], c[3], d)])
         s.d = nn.ModuleList([Block(c[3] + c[2], c[2], d), Block(c[2] + c[1], c[1], d), Block(c[1] + c[0], c[0], d)])
         s.up = nn.Sequential(nn.Upsample(scale_factor=2, mode="bilinear", align_corners=False), nn.Conv2d(c[0], 48, 3, padding=1), nn.SiLU(),
-                             nn.Conv2d(48, 48, 3, padding=1), nn.SiLU(), nn.Conv2d(48, 4, 1))
+                             nn.Conv2d(48, 48, 3, padding=1), nn.SiLU(), nn.Conv2d(48, 7 if s.coords else 4, 1))
     def forward(s, J, ref=None, z=None, Jr=None, yaw=None):
         z = s.tok(ref, Jr) if z is None else z; x = pose_features(J); hs = []
         if s.yaw_in:                                                  # front and back views share nearly the same 2D joints
@@ -113,6 +114,7 @@ class CharRender(nn.Module):
         for k, b in enumerate(s.d):
             x = b(torch.cat([F.interpolate(x, scale_factor=2, mode="nearest"), hs[-2 - k]], 1), z)
         o = s.up(x); a = torch.sigmoid(o[:, 3:4]); rgb = torch.sigmoid(o[:, :3]) * a      # premultiplied
+        if s.coords: s.last_coords = torch.sigmoid(o[:, 4:7])
         return torch.cat([rgb, a], 1)
 
 
@@ -294,7 +296,7 @@ def region_err(P, T, lab, ids):
 
 
 def load_model(path):
-    tj = json.loads((Path(path) / "train.json").read_text()); net = CharRender(v2=bool(tj.get("v2")), yaw_in=bool(tj.get("yaw_in")))
+    tj = json.loads((Path(path) / "train.json").read_text()); net = CharRender(v2=bool(tj.get("v2")), yaw_in=bool(tj.get("yaw_in")), coords=bool(tj.get("coords")))
     net.load_state_dict(torch.load(Path(path) / "char_render.pt", map_location="cpu")); return net.eval()
 
 
