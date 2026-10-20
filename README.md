@@ -18,10 +18,11 @@ Each video runs a 20 s script: walk, run, turn around, walk back, jump, turn to 
 
 ## New: multi-angle model `crender_h5ma` and a one-minute hold-out test
 
-![GEN60 truth vs network](media/gif/gen60_truth_vs_network.gif)
+![Held-out character: Blender truth vs h5ma](media/gif/h5ma_heldout_truth_vs_network.gif)
 
-Full video: [media/gen60_truth_vs_network.mp4](media/gen60_truth_vs_network.mp4). Left: Blender truth. Right: the network.
-Same minute, same camera.
+Visible gate example: [media/h5ma_heldout_truth_vs_network.mp4](media/h5ma_heldout_truth_vs_network.mp4). Left: Blender truth.
+Right: `crender_h5ma`, from one reference image. This is a held-out character and includes the front view band that was
+held out during training. The separate one-minute tuxedo diagnostic is [here](media/gen60_truth_vs_network.mp4).
 
 **The test.** One continuous minute of a character in a tuxedo-style outfit (black suit, white shirt front) that never
 appears in the training set. The network gets **one** image of it (`examples/gen60_tux/ref.png`, side-on, idle). The
